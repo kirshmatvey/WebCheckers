@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebCheckers")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+809b085b7fa2c9303551fcd91863dd74c7cd577e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+01ff84b12f1f0be400a02a938052771d16f28086")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebCheckers")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebCheckers")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
