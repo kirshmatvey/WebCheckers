@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "WebCheckers",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-IMbN6JSud8BzgHvZgL7BHa06ozycZQ5cBwJILuzZq1w=",
+    "hash": "sha256-5IAd7LIJYdXkXq4ktdBgm1Kx1oRUlqD/t4n0dEpOeb0=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.ykrnppwhq2.js"
@@ -1242,16 +1242,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "WebCheckers.wasm",
-        "name": "WebCheckers.h6s82wclt7.wasm",
-        "integrity": "sha256-V/2oPD9YcaTU1AFg6Rhnl7W2En2tsrkN06zJhR9L8Ss=",
+        "name": "WebCheckers.vu2d76szl9.wasm",
+        "integrity": "sha256-SfFBymCgwUvRNWJDH9VbEoPk9UAxM/zOuHms1rlIWzM=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "WebCheckers.pdb",
-        "name": "WebCheckers.7105bvc7nf.pdb",
-        "integrity": "sha256-a9aymjKg0Ndx1h/M5fUhVQOJOdCay2R21xBSBY5DAdk=",
+        "name": "WebCheckers.3e8cxfa6el.pdb",
+        "integrity": "sha256-ezKEPp9GsXxsFFhBbPbPTxRYJPIRZWmQayPaPvBVAv0=",
         "cache": "force-cache"
       }
     ],

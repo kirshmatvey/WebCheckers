@@ -1,11 +1,5 @@
-*[b-ysdjflb6eq] {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-}
-
 .hero[b-ysdjflb6eq] {
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
