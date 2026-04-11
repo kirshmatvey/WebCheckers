@@ -10,9 +10,10 @@
     flex-shrink: 100%;
 }
 
-.top-row {
+.navbar-top-row {
     min-height: 3.5rem;
     background-color: rgba(236, 235, 235, 0.4);
+    
 }
 
 .navbar-brand {

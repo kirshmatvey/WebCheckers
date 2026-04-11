@@ -11,11 +11,6 @@
 *.swp
 *.lock
 
-# Blazor WASM специфичные
-wwwroot/css/
-wwwroot/lib/
-!wwwroot/css/app.css # Если вы храните стили в репозитории
-
 # Настройки окружения (не включать секреты)
 appsettings.Development.json
 appsettings.Local.json
