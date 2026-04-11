@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matvey\\Desktop\\WebCheckers\\WebCheckers.csproj": {}
+    "C:\\Users\\max\\Desktop\\soft\\proga\\WebCheckers основа\\WebCheckers.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matvey\\Desktop\\WebCheckers\\WebCheckers.csproj": {
+    "C:\\Users\\max\\Desktop\\soft\\proga\\WebCheckers основа\\WebCheckers.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matvey\\Desktop\\WebCheckers\\WebCheckers.csproj",
+        "projectUniqueName": "C:\\Users\\max\\Desktop\\soft\\proga\\WebCheckers основа\\WebCheckers.csproj",
         "projectName": "WebCheckers",
-        "projectPath": "C:\\Users\\Matvey\\Desktop\\WebCheckers\\WebCheckers.csproj",
-        "packagesPath": "C:\\Users\\Matvey\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matvey\\Desktop\\WebCheckers\\obj\\",
+        "projectPath": "C:\\Users\\max\\Desktop\\soft\\proga\\WebCheckers основа\\WebCheckers.csproj",
+        "packagesPath": "C:\\Users\\max\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\max\\Desktop\\soft\\proga\\WebCheckers основа\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matvey\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\max\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"

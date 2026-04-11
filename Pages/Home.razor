@@ -2,78 +2,129 @@
 
 <PageTitle>Checkers</PageTitle>
 
-<section class='hero'>
-    <div class="board" style='transform: @(Turn == PieceColor.Black ? "rotate(180deg)" : "");'>
-        @for (int r = 8; r >= 1; r--)
-        {
-            for (int c = 1; c <= 8; c++)
+<div class="game-container">
+
+    <section class='hero'>
+        <div class="board" style='transform: @(Turn == PieceColor.Black ? "rotate(180deg)" : "");'>
+            @for (int r = 8; r >= 1; r--)
             {
-                var cell = board.Cells[r, c];
-
-                // Проверяем, доступен ли ход в текущую клетку [r, c] из выбранной
-                bool isPossibleMove = false;
-                if (selectedCell != null)
+                for (int c = 1; c <= 8; c++)
                 {
-                    var (canMove, victims) = logic.CheckActMove(board, $"{selectedCell.Row}{selectedCell.Col} {r}{c}".Split(" "));
-                    var (mustkill, list) = logic.HasAnyCapture(board);
-                    
-                    if (!mustkill)
-                    {
-                        isPossibleMove = canMove;
-                    }
-                    else if (victims.Count == 0)
-                    {
-                        isPossibleMove = false;
-                    }
-                    if (victims.Count > 0)
-                    {
-                        isPossibleMove = canMove;
-                    }
-                }
+                    var cell = board.Cells[r, c];
 
-                <div @onclick="() => HandleClick(cell)"
-                    class="cell"
-                    style="
-                    background-color: @(cell.IsPlayable ? "black" : "white");
-                    border: @(selectedCell == cell ? "3px solid green" : "1px solid transparent");
-                    ">
-                    
-                    @if (isPossibleMove) // Отрисовка возможных ходов
+                    // Проверяем, доступен ли ход в текущую клетку [r, c] из выбранной
+                    bool isPossibleMove = false;
+                    if (selectedCell != null)
                     {
-                        <div style="position: absolute; width: 15px; height: 15px;
-                                    background-color: green; border-radius: 50%;"></div>
-                    }
-
-                    @if (cell.Checker != null) // Отрисовка шашек
-                    {
-                        <div 
-                        class='checker' 
-                        style="
-                        background-color:@(cell.Checker.Colour == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
-                        outline: 5px solid @(cell.Checker.Colour == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)");">
-
-                            @if (cell.Checker.IsKing) // Отрисовка дамки
-                            {
-                                <img src="\images\crown.svg" style="width: 75%; height: 75%;" />
-                            }
-                        </div>
+                        var (canMove, victims) = logic.CheckActMove(board, $"{selectedCell.Row}{selectedCell.Col} {r}{c}".Split(" "));
+                        var (mustkill, list) = logic.HasAnyCapture(board);
                         
+                        if (!mustkill)
+                        {
+                            isPossibleMove = canMove;
+                        }
+                        else if (victims.Count == 0)
+                        {
+                            isPossibleMove = false;
+                        }
+                        if (victims.Count > 0)
+                        {
+                            isPossibleMove = canMove;
+                        }
                     }
-                    
+
+                    // Отрисовка клеток
+                    <div @onclick="() => HandleClick(cell)" 
+                        class="cell"
+                        style="
+                        background-color: @(cell.IsPlayable ? "black" : "white");
+                        border: @(selectedCell == cell ? "3px solid green" : "1px solid transparent");
+                        ">
+                        
+                        @if (isPossibleMove) // Отрисовка возможных ходов
+                        {
+                            <div style="position: absolute; width: 15px; height: 15px;
+                                        background-color: green; border-radius: 50%;"></div>
+                        }
+
+                        @if (cell.Checker != null) // Отрисовка шашек
+                        {
+                            <div 
+                            class='checker' 
+                            style="
+                            background-color:@(cell.Checker.Colour == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
+                            outline: 5px solid @(cell.Checker.Colour == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)");">
+
+                                @if (cell.Checker.IsKing) // Отрисовка дамки
+                                {
+                                    <img src="\images\crown.svg" style="width: 75%; height: 75%;" />
+                                }
+                            </div>
+                            
+                        }
+                        
+                    </div>
+
+                }
+            }
+        </div>
+    </section>
+
+    <div class="info-panel">
+        
+        <h3 style="margin-bottom: 15px";>Статус игры</h3>
+
+        <hr/>
+
+        <div style="display: flex; margin-bottom: 15px; margin-top: 5px; align-items: center;">
+
+            <strong>Ход:</strong> 
+
+            <span style="margin-left: 10px; margin-right: 10px;">
+                @(logic.Turn == PieceColor.White ? "БЕЛЫЕ" : "ЧЕРНЫЕ")
+            </span>
+
+            <div class='checker' 
+                    style="
+                    background-color:@(logic.Turn == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
+                    outline: 3px solid @(logic.Turn == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)"); margin-right: 10px;">
+                </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; ">
+            
+            <div style="display: flex; align-items: center;">
+                
+                <div class='checker' 
+                    style="
+                    background-color: white;
+                    outline: 3px solid rgba(156, 156, 156, 1); margin-right: 10px;">
                 </div>
 
-            }
-        }
-    </div>
-</section>
+                <span>Белых осталось:</span>
+                <span style="font-weight: bold; margin-left: 21px;">да</span>
+            </div>
+            
+            <div style="display: flex; align-items: center;">
 
+                <div class='checker' 
+                    style="
+                    background-color:rgba(62, 50, 41, 1);
+                    outline: 3px solid rgba(89, 80, 72, 1); margin-right: 10px;">
+                </div>
+
+                <span>Черных осталось:</span>
+                <span style="font-weight: bold; margin-left: 10px;">да</span>
+            </div>
+        </div>
+    </div>
+</div>
 <p>
-@Turn
+
 @if (winner != null) // Победитель
 {
-    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                background: white; border: 5px solid gold; padding: 20px; z-index: 100; text-align: center;">
-        <h2>Победили @(winner == PieceColor.White ? "Красные" : "Черные")!</h2>
+    <div class="winner-panel">
+        <h2>Победили @(winner == PieceColor.White ? "Белые" : "Черные")!</h2>
         <button onclick="window.location.reload()">Начать заново</button>
     </div>
 }

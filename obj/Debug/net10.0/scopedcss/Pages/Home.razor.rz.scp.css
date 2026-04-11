@@ -2,6 +2,7 @@
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: Georgia;
 }
 
 .hero[b-ysdjflb6eq] {
@@ -40,4 +41,41 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
+}
+
+.info-panel[b-ysdjflb6eq]{
+    height: 53vh;
+    width: 350px; 
+    padding: 20px; 
+    background-color: #f8f9fa; 
+    border: 2px solid #dee2e6; 
+    border-radius: 8px;
+}
+
+.info-panel .checker[b-ysdjflb6eq] {
+    width: 15px; 
+    height: 15px; 
+    border-radius: 50%;
+}
+
+.game-container[b-ysdjflb6eq] {
+    display: flex; 
+    gap: 150px; 
+    align-items: center;
+    position: absolute;
+    top: 10;
+    left: 500px;
+}
+
+.winner-panel[b-ysdjflb6eq] {
+    background: #f8f9fa; 
+    border: 5px solid #dee2e6; 
+    border-radius: 10px;
+    padding: 20px; 
+    z-index: 100; 
+    text-align: center;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
 }
