@@ -1,8 +1,9 @@
 .hero[b-ysdjflb6eq] {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .board[b-ysdjflb6eq] {
@@ -34,4 +35,12 @@
     display: flex; 
     justify-content: center; 
     align-items: center;
+}
+
+.turn-color-span[b-ysdjflb6eq] {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-weight: bold;
+    font-size: 30px;
 }

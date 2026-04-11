@@ -87,7 +87,8 @@ main[b-ypvhgoz8h7] {
 }
 
 .navbar-brand[b-jn223dlyl3] {
-    font-size: 1.1rem;
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .bi[b-jn223dlyl3] {
@@ -162,10 +163,11 @@ main[b-ypvhgoz8h7] {
 }
 /* /Pages/Home.razor.rz.scp.css */
 .hero[b-ysdjflb6eq] {
-    height: 100vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .board[b-ysdjflb6eq] {
@@ -197,4 +199,12 @@ main[b-ypvhgoz8h7] {
     display: flex; 
     justify-content: center; 
     align-items: center;
+}
+
+.turn-color-span[b-ysdjflb6eq] {
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    font-weight: bold;
+    font-size: 30px;
 }

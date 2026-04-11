@@ -1113,16 +1113,7 @@ C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\WebCheckers.dll
 C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\refint\WebCheckers.dll
 C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\WebCheckers.pdb
 C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\ref\WebCheckers.dll
-C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.vu2d76szl9.wasm
-C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.3e8cxfa6el.pdb
-C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\dotnet.vrll5addzm.js
-C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.vu2d76szl9.wasm.gz
-C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.3e8cxfa6el.pdb.gz
-C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\dotnet.vrll5addzm.js.gz
 C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\WebCheckers.sourcelink.json
-C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\ol7na1tx8d-{0}-vu2d76szl9-vu2d76szl9.gz
-C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\9vfhaz722e-{0}-3e8cxfa6el-3e8cxfa6el.gz
-C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\ki79do9pvj-{0}-vrll5addzm-vrll5addzm.gz
 C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\bin\Debug\net10.0\WebCheckers.runtimeconfig.json
 C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\blazor.webassembly.66stpp682q.js
 C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\Microsoft.AspNetCore.Authorization.roqc1km2rj.wasm
@@ -2252,6 +2243,16 @@ C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\obj\Debug\net10.0\WebCheck
 C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\obj\Debug\net10.0\ref\WebCheckers.dll
 C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\obj\Debug\net10.0\compressed\vsmtyevrb6-{0}-jt2hakhhmz-jt2hakhhmz.gz
 C:\Users\Matvey\Desktop\IT\Other projects\WebCheckers\obj\Debug\net10.0\compressed\lvd0o6ff9r-{0}-jt2hakhhmz-jt2hakhhmz.gz
-C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\vsmtyevrb6-{0}-jt2hakhhmz-jt2hakhhmz.gz
-C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\lvd0o6ff9r-{0}-jt2hakhhmz-jt2hakhhmz.gz
-C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\522tvfe8wc-{0}-w56eiqaa0p-w56eiqaa0p.gz
+C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.y8omplijok.wasm
+C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.6nlm2oo1fc.pdb
+C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\dotnet.j4khm774y8.js
+C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.y8omplijok.wasm.gz
+C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\WebCheckers.6nlm2oo1fc.pdb.gz
+C:\Users\Matvey\Desktop\WebCheckers\bin\Debug\net10.0\wwwroot\_framework\dotnet.j4khm774y8.js.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\9o6ik3bicu-{0}-6unmlz1c85-6unmlz1c85.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\vsmtyevrb6-{0}-io9wkb4wti-io9wkb4wti.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\lvd0o6ff9r-{0}-io9wkb4wti-io9wkb4wti.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\ol7na1tx8d-{0}-y8omplijok-y8omplijok.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\9vfhaz722e-{0}-6nlm2oo1fc-6nlm2oo1fc.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\ki79do9pvj-{0}-j4khm774y8-j4khm774y8.gz
+C:\Users\Matvey\Desktop\WebCheckers\obj\Debug\net10.0\compressed\522tvfe8wc-{0}-0ek9l6vcr8-0ek9l6vcr8.gz
