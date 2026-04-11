@@ -1,0 +1,25 @@
+# Папки сборки и временные файлы
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+[Ll]ogs/
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.swp
+*.lock
+
+# Blazor WASM специфичные
+wwwroot/css/
+wwwroot/lib/
+!wwwroot/css/app.css # Если вы храните стили в репозитории
+
+# Настройки окружения (не включать секреты)
+appsettings.Development.json
+appsettings.Local.json
+*.local
+
+# Публикация
+publish/
