@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using System.ComponentModel
 
 <PageTitle>Checkers</PageTitle>
 
@@ -8,8 +9,6 @@
         {
             for (int c = 1; c <= 8; c++)
             {
-
-                for (int c = 1; c <= 8; c++)
                 var cell = board.Cells[r, c];
 
                 // Проверяем, доступен ли ход в текущую клетку [r, c] из выбранной
@@ -80,16 +79,15 @@
                                     <img src="\images\crown.svg" style="width: 75%; height: 75%;" />
                                 }
                             </div>  
-                        }   
-                    </div>
-                }
+                        }
                     }
-                    
                 </div>
+
 
             }
         }
     </div>
+
     <div class="info-panel">
         <h3 style="margin-top: 0;">Статус игры</h3>
         <hr/>
@@ -146,9 +144,6 @@
                 <button onclick="window.location.reload()">Начать заново</button>
             </div>
         }
-    </div>
-</div>
-            }
     </div>
 </section>
 

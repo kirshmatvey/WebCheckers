@@ -36,5 +36,22 @@ namespace WebCheckers.Pages
             }
             winner = logic.CheckWinner(board);
         }
+
+        private bool HasAnyMoves(Cell cell)
+        {
+            if(cell.Checker != null)
+            {
+                for (int rr = 8; rr >= 1; rr--)
+                {
+                    for (int cc = 1; cc <= 8; cc++)
+                    {
+                        var (canMove, victims) = logic.CheckActMove(board, $"{cell.Row}{cell.Col} {rr}{cc}".Split(" "));
+                    
+                        if (canMove) return true; 
+                    }
+                }
+            }
+            return false;
+        } 
     }
 }
