@@ -35,20 +35,25 @@ namespace WebCheckers.Pages
                 act = "";
             }
             winner = logic.CheckWinner(board);
+
+            if (winner == null && !CanPlayerMove(logic.Turn))
+            {
+                // Если шашки есть, но ходить некуда
+                winner = (logic.Turn == PieceColor.White) ? PieceColor.Black : PieceColor.White;
+            }
+    
+            StateHasChanged(); // Принудительно обновляем U
         }
 
         private bool HasAnyMoves(Cell cell)
         {
-            if(cell.Checker != null)
+            for (int rr = 8; rr >= 1; rr--)
             {
-                for (int rr = 8; rr >= 1; rr--)
+                for (int cc = 1; cc <= 8; cc++)
                 {
-                    for (int cc = 1; cc <= 8; cc++)
-                    {
-                        var (canMove, victims) = logic.CheckActMove(board, $"{cell.Row}{cell.Col} {rr}{cc}".Split(" "));
-                    
-                        if (canMove) return true; 
-                    }
+                    var (canMove, victims) = logic.CheckActMove(board, $"{cell.Row}{cell.Col} {rr}{cc}".Split(" "));
+                
+                    if (canMove) return true; 
                 }
             }
             return false;
