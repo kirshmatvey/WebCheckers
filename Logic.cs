@@ -18,25 +18,30 @@ namespace WebCheckers
         }
         public PieceColor? CheckWinner(Board board)
         {
-            int whiteCount = 0;
-            int blackCount = 0;
+            // int whiteCount = 0;
+            // int blackCount = 0;
 
-            foreach (var cell in board.Cells)
-            {
-                if (cell?.Checker != null)
-                {
-                    if (cell.Checker.Colour == PieceColor.White) whiteCount++;
-                    else blackCount++;
-                }
-            }
+            // foreach (var cell in board.Cells)
+            // {
+            //     if (cell?.Checker != null)
+            //     {
+            //         if (cell.Checker.Colour == PieceColor.White) whiteCount++;
+            //         else blackCount++;
+            //     }
+            // }
 
-            if (whiteCount == 0) return PieceColor.Black;
-            if (blackCount == 0) return PieceColor.White;
+            // if (whiteCount == 0) return PieceColor.Black;
+            // if (blackCount == 0) return PieceColor.White;
+
+            int countWhite = board.Cells.Cast<Cell>().Count(c => c?.Checker?.Colour == PieceColor.White);
+            int countBlack = board.Cells.Cast<Cell>().Count(c => c?.Checker?.Colour == PieceColor.Black);
+
+            if (countWhite == 0) return PieceColor.Black;
+            if (countBlack == 0) return PieceColor.White;
+                
 
             return null; // Игра продолжается
         }
-
-
         public bool Action(Board board, string Act)
         {
             string[] actions = Act.Split(" "); // Вход 22 33 => Выход [22; 33] 

@@ -4,9 +4,10 @@
 
 <div style="display: flex; gap: 160px; align-items: flex-start;">
     <section class='hero'>
-        <div class="board" style='transform: @(Turn == PieceColor.Black ? "rotate(180deg)" : "");'>
+        <div class="board" style='transform: @(Turn == PieceColor.Black ? "" : "");'>
             @for (int r = 8; r >= 1; r--)
             {
+
                 for (int c = 1; c <= 8; c++)
                 {
                     var cell = board.Cells[r, c];
@@ -58,77 +59,75 @@
                                 {
                                     <img src="\images\crown.svg" style="width: 75%; height: 75%;" />
                                 }
-                            </div>
-                            
-                        }
-                        
+                            </div>  
+                        }   
                     </div>
-
                 }
             }
         </div>
     </section>
     <div class="info-panel">
-            
-            <h3 style="margin-top: 0;">Статус игры</h3>
-            <hr/>
+        <h3 style="margin-top: 0;">Статус игры</h3>
+        <hr/>
 
-            <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
+        <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
 
-                <strong>Ход:</strong> 
+            <strong>Ход:</strong> 
 
-                <span>
-                    @(logic.Turn == PieceColor.White ? "БЕЛЫЕ" : "ЧЕРНЫЕ")
-                </span>
+            <span>
+                @(logic.Turn == PieceColor.White ? "БЕЛЫЕ" : "ЧЕРНЫЕ")
+            </span>
 
-                <div 
-                    class='checker' 
-                    style="
-                    background-color:@(logic.Turn == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
-                    outline: 3px solid @(logic.Turn == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)")">
-                </div>
-
+            <div 
+                class='checker' 
+                style="
+                background-color:@(logic.Turn == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
+                outline: 3px solid @(logic.Turn == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)")">
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 70px;">
-                <div style="display: flex; align-items: center; gap: 5px;">
-                    <div 
-                    class='checker' 
-                    style="
-                    background-color: white;
-                    outline: 3px solid rgba(156, 156, 156, 1);">
-                    </div>
-
-                    <span>Белых осталось:</span>
-
-                    <span style="font-weight: bold; margin-left: 9px;">да</span>
-                </div>
-
-                <div style="display: flex; align-items: center; gap: 5px;">
-                    <div 
-                    class='checker' 
-                    style="
-                    background-color: rgba(62, 50, 41, 1);
-                    outline: 3px solid rgba(89, 80, 72, 1);">
-                    </div>
-                    <span>Черных осталось:</span>
-
-                    <span style="font-weight: bold;">да</span>
-                </div>
-            </div>
-
-            @if (winner != null) // Победитель
-            {
-                <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-                            background: white; border: 5px solid gold; padding: 20px; z-index: 100; text-align: center;">
-                    <h2>Победили @(winner == PieceColor.White ? "Белые" : "Черные")!</h2>
-                    <button onclick="window.location.reload()">Начать заново</button>
-                </div>
-            }
         </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 70px;">
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <div 
+                class='checker' 
+                style="
+                background-color: white;
+                outline: 3px solid rgba(156, 156, 156, 1);">
+                </div>
+
+                <span>Белых осталось:</span>
+
+                <span style="font-weight: bold; margin-left: 9px;">@CountWhite</span>
+            </div>
+
+            <div style="display: flex; align-items: center; gap: 5px;">
+                <div 
+                class='checker' 
+                style="
+                background-color: rgba(62, 50, 41, 1);
+                outline: 3px solid rgba(89, 80, 72, 1);">
+                </div>
+                <span>Черных осталось:</span>
+
+                <span style="font-weight: bold;">@CountBlack</span>
+            </div>
+        </div>
+
+        @if (winner != null) // Победитель
+        {
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        background: white; border: 5px solid gold; padding: 20px; z-index: 100; text-align: center;">
+                <h2>Победили @(winner == PieceColor.White ? "Белые" : "Черные")!</h2>
+                <button onclick="window.location.reload()">Начать заново</button>
+            </div>
+        }
+    </div>
 </div>
 
 @code {
     private Board board = new Board();
-    private PieceColor? winner;
+    private PieceColor? winner; 
+    private int CountWhite => board.Cells.Cast<Cell>().Count(c => c?.Checker?.Colour == PieceColor.White);
+    private int CountBlack => board.Cells.Cast<Cell>().Count(c => c?.Checker?.Colour == PieceColor.Black);
 }
