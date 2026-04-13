@@ -4,7 +4,7 @@
 
 <div style="display: flex; gap: 160px; align-items: flex-start;">
     <section class='hero'>
-        <div class="board" style='transform: @(Turn == PieceColor.Black ? "" : "");'>
+        <div class="board" style='transform: @(Turn == PieceColor.Black ? "rotate(180deg)" : "");'>
             @for (int r = 8; r >= 1; r--)
             {
 
