@@ -117,6 +117,10 @@
 
                 <span style="font-weight: bold;">@CountBlack</span>
             </div>
+
+            <div style="display: flex; justify-content: center; margin-top: 15px;">
+                <button class="SurrenderButton" @onclick="() => Surrender()">Сдаться</button>
+            </div>
         </div>
         @if (Draw(board)) // Если ничья
         {
