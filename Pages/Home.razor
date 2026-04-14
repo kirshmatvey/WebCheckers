@@ -65,25 +65,8 @@
                             <div style="position: absolute; width: 15px; height: 15px;
                                         background-color: green; border-radius: 50%;"></div>
                         }
-
-                        @if (cell.Checker != null) // Отрисовка шашек
-                        {
-                            <div 
-                            class='checker' 
-                            style="
-                            background-color:@(cell.Checker.Colour == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
-                            outline: 5px solid @(cell.Checker.Colour == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)");">
-
-                                @if (cell.Checker.IsKing) // Отрисовка дамки
-                                {
-                                    <img src="\images\crown.svg" style="width: 75%; height: 75%;" />
-                                }
-                            </div>  
-                        }
                     }
                 </div>
-
-
             }
         }
     </div>
@@ -135,7 +118,14 @@
                 <span style="font-weight: bold;">@CountBlack</span>
             </div>
         </div>
-
+        @if (Draw(board)) // Если ничья
+        {
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+                        background: white; border: 5px solid gold; padding: 20px; z-index: 100; text-align: center;">
+                <h2>Это ничья!</h2>
+                <button onclick="window.location.reload()">Начать заново</button>
+            </div>
+        }
         @if (winner != null) // Победитель
         {
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
@@ -150,7 +140,19 @@
 
 @code {
     private Board board = new Board();
-    private PieceColor? winner; 
     private int CountWhite => board.Cells.Cast<Cell>().Count(c => c?.Checker?.Colour == PieceColor.White);
     private int CountBlack => board.Cells.Cast<Cell>().Count(c => c?.Checker?.Colour == PieceColor.Black);
+    private PieceColor? winner; 
+
+    private bool CanPlayerMove(PieceColor color)
+    {
+        // Берем все шашки текущего цвета
+        IEnumerable<Cell>? playerCells = board.Cells.Cast<Cell>().Where(c => c != null && c.Checker?.Colour == color);
+        
+        foreach (Cell cell in playerCells)
+        {
+            if (HasAnyMoves(cell)) return true; // Если хоть одна шашка может ходить - игрок не проиграл
+        }
+        return false; // Если перебрали все и никто не может ходить - тупик
+    }
 }
