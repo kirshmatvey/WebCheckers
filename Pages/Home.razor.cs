@@ -75,5 +75,13 @@ namespace WebCheckers.Pages
             }
             return false;
         }
+
+        private void Surrender()
+        {
+            if (winner == null)
+            {
+                winner = (logic.Turn == PieceColor.White) ? PieceColor.Black : PieceColor.White;
+            }
+        }
     }
 }
