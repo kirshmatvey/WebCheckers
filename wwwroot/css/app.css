@@ -1,5 +1,53 @@
+
+/* Box sizing rules */
+@font-face {
+font-family: 'Trueno Checkers';
+font-style: normal;
+font-weight: 400;
+src: url('./trueno-font/TruenoRg.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Checkers';
+font-style: normal;
+font-weight: 600;
+src: url('./trueno-font/TruenoSBd.woff') format('woff');
+}
+
+
+@font-face {
+font-family: 'Trueno Checkers';
+font-style: normal;
+font-weight: 700;
+src: url('./trueno-font/TruenoBd.woff') format('woff');
+}
+
+@font-face {
+font-family: 'Trueno Checkers';
+font-style: normal;
+font-weight: 800;
+src: url('./trueno-font/TruenoExBd.woff') format('woff');
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button, input {
+    font-family: inherit;
+    color: inherit;
+}
+
+button {
+    border: none;
+}
+
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: 'Trueno Checkers', Helvetica, Arial, sans-serif;
+    color: #fff;
 }
 
 h1:focus {

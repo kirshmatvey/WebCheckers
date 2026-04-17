@@ -36,7 +36,7 @@
                 <div @onclick="() => HandleClick(cell)"
                     class="cell"
                     style="
-                    background-color: @(cell.IsPlayable ? "black" : "white");
+                    background-color: @(cell.IsPlayable ? "#779556" : "#ebecd0");
                     border: @(selectedCell == cell ? "3px solid green" : "1px solid transparent");
                     ">
                     
@@ -52,7 +52,7 @@
                         class='checker' 
                         style="
                         background-color:@(cell.Checker.Colour == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
-                        outline: 5px solid @(cell.Checker.Colour == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)");">
+                        outline: 1px solid @(cell.Checker.Colour == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)");">
 
                             @if (cell.Checker.IsKing) // Отрисовка дамки
                             {
@@ -72,15 +72,15 @@
     </div>
 
     <div class="info-panel">
-        <h3 style="margin-top: 0;">Статус игры</h3>
+        <h3 class='info-panel-title'>GAME STATUS</h3>
         <hr/>
 
         <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
 
-            <strong>Ход:</strong> 
+            <strong>Turn:</strong> 
 
             <span>
-                @(logic.Turn == PieceColor.White ? "БЕЛЫЕ" : "ЧЕРНЫЕ")
+                @(logic.Turn == PieceColor.White ? "White" : "Black")
             </span>
 
             <div 
@@ -97,11 +97,10 @@
                 <div 
                 class='checker' 
                 style="
-                background-color: white;
-                outline: 3px solid rgba(156, 156, 156, 1);">
+                background-color: white;">
                 </div>
 
-                <span>Белых осталось:</span>
+                <span>White left:</span>
 
                 <span style="font-weight: bold; margin-left: 9px;">@CountWhite</span>
             </div>
@@ -110,17 +109,13 @@
                 <div 
                 class='checker' 
                 style="
-                background-color: rgba(62, 50, 41, 1);
-                outline: 3px solid rgba(89, 80, 72, 1);">
+                background-color: rgba(62, 50, 41, 1);">
                 </div>
-                <span>Черных осталось:</span>
+                <span>Black left:</span>
 
-                <span style="font-weight: bold;">@CountBlack</span>
+                <span style="font-weight: bold; margin-left: 9px;">@CountBlack</span>
             </div>
-
-            <div style="display: flex; justify-content: center; margin-top: 15px;">
-                <button class="SurrenderButton" @onclick="() => Surrender()">Сдаться</button>
-            </div>
+            <button class="SurrenderButton" @onclick="() => Surrender()">RESIGN</button>
         </div>
         @if (Draw(board)) // Если ничья
         {
