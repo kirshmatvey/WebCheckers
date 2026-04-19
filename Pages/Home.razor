@@ -4,7 +4,7 @@
 <PageTitle>Checkers</PageTitle>
 
 <section class='hero'>
-    <div class="board" style='transform: @(Turn == PieceColor.Black ? "rotate(180deg)" : "");'>
+    <div class="board">
         @for (int r = 8; r >= 1; r--)
         {
             for (int c = 1; c <= 8; c++)
@@ -73,50 +73,45 @@
 
     <div class="info-panel">
         <h3 class='info-panel-title'>GAME STATUS</h3>
-        <hr/>
 
-        <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 10px;">
-
+        <div class='turn-display-wrapper'>
             <strong>Turn:</strong> 
-
-            <span>
+            <div class='turn-wrapper'>
+                <span class='turn-color'>
                 @(logic.Turn == PieceColor.White ? "White" : "Black")
-            </span>
+                </span>
+                <div 
+                    class='checker' 
+                    style="
+                    background-color:@(logic.Turn == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");">
+                </div>
+            </div>
+        </div>
 
+        
+        <div class='white-checkers-left'>
+            <div
+            class='checker' 
+            style="
+            background-color: white;">
+            </div>
+
+            <span class="white-left-span">White left:</span>
+
+            <span style="font-weight: bold; margin-left: 10px;">@CountWhite</span>
+        </div>
+
+        <div class='black-checkers-left'>
             <div 
-                class='checker' 
-                style="
-                background-color:@(logic.Turn == PieceColor.Black ? "rgba(62, 50, 41, 1)" : "white");
-                outline: 3px solid @(logic.Turn == PieceColor.Black ? "rgba(89, 80, 72, 1)" : "rgba(156, 156, 156, 1)")">
+            class='checker' 
+            style="
+            background-color: rgba(62, 50, 41, 1);">
             </div>
+            <span class="black-left-span">Black left:</span>
 
+            <span style="font-weight: bold; margin-left: 10px;">@CountBlack</span>
         </div>
-
-        <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 70px;">
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <div 
-                class='checker' 
-                style="
-                background-color: white;">
-                </div>
-
-                <span>White left:</span>
-
-                <span style="font-weight: bold; margin-left: 9px;">@CountWhite</span>
-            </div>
-
-            <div style="display: flex; align-items: center; gap: 5px;">
-                <div 
-                class='checker' 
-                style="
-                background-color: rgba(62, 50, 41, 1);">
-                </div>
-                <span>Black left:</span>
-
-                <span style="font-weight: bold; margin-left: 9px;">@CountBlack</span>
-            </div>
-            <button class="SurrenderButton" @onclick="() => Surrender()">RESIGN</button>
-        </div>
+        <button class="surrender-button" @onclick="() => Surrender()">RESIGN</button>
         @if (Draw(board)) // Если ничья
         {
             <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);

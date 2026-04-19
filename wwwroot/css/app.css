@@ -41,6 +41,11 @@ button, input {
     color: inherit;
 }
 
+a {
+    text-decoration: none;
+    font-family: inherit;
+}
+
 button {
     border: none;
 }
